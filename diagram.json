@@ -1,0 +1,118 @@
+{
+  "version": 1,
+  "author": "Giray Aksakal",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "wokwi-breadboard-mini",
+      "id": "bb3",
+      "top": 161.8,
+      "left": 112.8,
+      "attrs": { "background": "black" }
+    },
+    { "type": "wokwi-arduino-mega", "id": "mega", "top": -85.8, "left": 274.8, "attrs": {} },
+    {
+      "type": "wokwi-servo",
+      "id": "servo1",
+      "top": 295.6,
+      "left": 9.6,
+      "attrs": { "hornColor": "#ff0000" }
+    },
+    {
+      "type": "wokwi-servo",
+      "id": "servo2",
+      "top": 420.4,
+      "left": 297.6,
+      "attrs": { "hornColor": "#bbffbb" }
+    },
+    {
+      "type": "wokwi-servo",
+      "id": "servo3",
+      "top": 295.6,
+      "left": 211.2,
+      "attrs": { "hornColor": "#00ff00" }
+    },
+    {
+      "type": "wokwi-servo",
+      "id": "servo4",
+      "top": 420.4,
+      "left": 105.6,
+      "attrs": { "hornColor": "#ffffff" }
+    },
+    {
+      "type": "wokwi-servo",
+      "id": "servo5",
+      "top": 420.4,
+      "left": -86.4,
+      "attrs": { "hornColor": "#ffbbbb" }
+    },
+    { "type": "wokwi-mpu6050", "id": "imu1", "top": -207.38, "left": 501.52, "attrs": {} },
+    {
+      "type": "wokwi-lcd2004",
+      "id": "lcd1",
+      "top": 150.4,
+      "left": 466.4,
+      "attrs": { "pins": "i2c", "background": "black", "color": "white" }
+    }
+  ],
+  "connections": [
+    [ "servo3:GND", "bb3:1b.i", "black", [ "h-28.8", "v38.4", "h-201.6", "v-115.2" ] ],
+    [ "servo3:V+", "bb3:1t.d", "red", [ "h-19.2", "v38.5", "h-220.8", "v-192" ] ],
+    [ "servo5:GND", "bb3:1b.h", "black", [ "h-9.6", "v-76.8", "h57.6", "v-134.4" ] ],
+    [ "servo4:GND", "bb3:1b.g", "black", [ "h-9.6", "v-67.2", "h-144", "v-153.6" ] ],
+    [ "servo2:GND", "bb3:1b.f", "black", [ "h-9.6", "v-57.6", "h-345.6", "v-172.8" ] ],
+    [ "bb3:1b.j", "bb3:2b.i", "black", [ "v0" ] ],
+    [ "bb3:2b.j", "servo1:GND", "black", [ "v9.6", "h-28.8", "v-9.6", "h-105.6", "v67.2" ] ],
+    [ "servo5:V+", "bb3:1t.c", "red", [ "h-19.2", "v-95.9", "h38.4", "v-192" ] ],
+    [ "servo4:V+", "bb3:1t.b", "red", [ "h-19.2", "v-57.5", "h-163.2", "v-240" ] ],
+    [ "servo2:V+", "bb3:1t.a", "red", [ "h-19.2", "v-47.9", "h-364.8", "v-259.2" ] ],
+    [ "bb3:1t.e", "bb3:2t.d", "red", [ "v0" ] ],
+    [
+      "bb3:2t.e",
+      "servo1:V+",
+      "red",
+      [ "v0", "h0", "v9.6", "h-19.2", "v-9.6", "h-124.8", "v144" ]
+    ],
+    [ "bb3:17t.e", "bb3:17b.f", "#8f4814", [ "v0" ] ],
+    [ "bb3:16t.e", "bb3:16b.f", "#8f4814", [ "v0" ] ],
+    [ "bb3:15t.e", "bb3:15b.f", "#8f4814", [ "v0" ] ],
+    [ "bb3:14t.e", "bb3:14b.f", "orange", [ "v0" ] ],
+    [ "bb3:13t.e", "bb3:13b.f", "orange", [ "v0" ] ],
+    [ "servo1:PWM", "bb3:13b.j", "orange", [ "h-9.6", "v9.8", "h48", "v-76.8", "h192" ] ],
+    [ "servo3:PWM", "bb3:14b.j", "orange", [ "h-9.6", "v-57.4", "h48" ] ],
+    [
+      "servo4:PWM",
+      "bb3:16b.j",
+      "#8f4814",
+      [ "h-9.6", "v29", "h384", "v-144", "h-86.4", "v-67.2", "h-124.8" ]
+    ],
+    [
+      "servo2:PWM",
+      "bb3:15b.j",
+      "#8f4814",
+      [ "h-9.6", "v19.4", "h182.4", "v-124.8", "h-86.4", "v-67.2", "h-124.8" ]
+    ],
+    [
+      "servo5:PWM",
+      "bb3:17b.j",
+      "#8f4814",
+      [ "h-9.6", "v38.6", "h585.6", "v-163.2", "h-86.4", "v-67.2", "h-124.8" ]
+    ],
+    [ "mega:12", "bb3:16t.a", "#8f4814", [ "v-9.6", "h-268.8" ] ],
+    [ "mega:11", "bb3:15t.a", "#8f4814", [ "v-19.2", "h-288.4" ] ],
+    [ "mega:GND.2", "bb3:2b.f", "black", [ "v54.9", "h-151.45", "v86.4" ] ],
+    [ "mega:5V", "bb3:2t.a", "red", [ "v45.3", "h-304.9" ] ],
+    [ "bb3:15t.b", "bb3:17t.b", "#8f4814", [ "v0" ] ],
+    [ "mega:5", "bb3:13t.a", "orange", [ "v-28.8", "h-244.3" ] ],
+    [ "bb3:14t.a", "mega:2", "orange", [ "v-288", "h263.2" ] ],
+    [ "imu1:VCC", "mega:5V.2", "red", [ "v0", "h67.28" ] ],
+    [ "imu1:GND", "mega:GND.4", "black", [ "v-9.6", "h57.68", "v296.65" ] ],
+    [ "imu1:SCL", "mega:21", "violet", [ "v-19.2", "h57.68" ] ],
+    [ "imu1:SDA", "mega:20", "magenta", [ "v-28.8", "h57.68" ] ],
+    [ "lcd1:GND", "mega:GND.3", "black", [ "h0" ] ],
+    [ "lcd1:VCC", "mega:5V", "red", [ "h0" ] ],
+    [ "lcd1:SDA", "mega:SDA", "magenta", [ "h0" ] ],
+    [ "lcd1:SCL", "mega:SCL", "violet", [ "h0" ] ]
+  ],
+  "dependencies": {}
+}
